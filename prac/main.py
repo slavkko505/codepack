@@ -19,7 +19,7 @@ def AddToMat():
     for i in range(0, n):
         a.append(int(input()))
     return a
-
+//
 def SumElem():
     a = AddToMat()
     t = False
