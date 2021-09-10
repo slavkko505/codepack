@@ -13,7 +13,16 @@ def ContBallWay(n):
         return 1
 
     return ContBallWay(n - 1) + ContBallWay(n - 2) + ContBallWay(n - 3)
+def EnterNumber():
+    while True:
+        try:
+            n = int(input('Ведіть исоту сходинки '))
+            if n == 0:
+                print('\nВедіть число відміне від 0 ')
+                continue
+            break
+        except ValueError:
+            print('\nВедіть число')
+    return n
 
-
-n = int(input())
-print(ContBallWay(n))
+print(ContBallWay(EnterNumber()))
