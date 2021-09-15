@@ -20,8 +20,7 @@ def AddToMat():
         a.append(int(input()))
     return a
 
-def SumElem():
-    a = AddToMat()
+def SumElem(*a):
     t = False
     for i in range(len(a) - 1):
         if a[i]*a[i + 1] < 0:
@@ -39,4 +38,6 @@ def SumElem():
         for i in a:
             if i <0:
                 print(i,end=' ')
-SumElem()
+
+a = AddToMat()
+SumElem(a)
