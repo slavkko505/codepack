@@ -33,11 +33,16 @@ def SumElem(*a):
         for i in a:
             if i >0:
                 s =s+i
-        print(s)
+        return(s)
     else:
+        b=[]
         for i in a:
             if i <0:
-                print(i,end=' ')
+                b.append(i)
+        return(b)
 
 a = AddToMat()
-SumElem(a)
+s =SumElem(*a)
+print(s)
+b= SumElem(-1,3,-3,-5)
+print(b)
