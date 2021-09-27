@@ -1,0 +1,20 @@
+[
+  {
+    "title":"rings",
+    "code": "406",
+    "material": "gold",
+    "type": "rings",
+    "date_of_creation":"2020-06-06",
+    "price": "201",
+    "u_id": "12312415"
+  },
+  {
+    "title":"circle",
+    "code": "23412",
+    "material": "silver",
+    "type": "bracelets",
+    "date_of_creation":"1960-12-06",
+    "price": "220.1",
+    "u_id": "1123"
+  }
+  ]
