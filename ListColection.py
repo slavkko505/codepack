@@ -1,8 +1,3 @@
-from Validation import Validation
-from Jewelry import Product
-import  json
-class LstCollection:
-
     def __init__(self, *lst):
         self.lst = list(lst[:])
 
@@ -48,8 +43,8 @@ class LstCollection:
         for i, product in enumerate(file):
             try:
                 self.lst.append(Product(**product))
-            except ValueError as e:
-                print(" ___Line " + str(i * (len(product) + 1) + 3) + ": ERROR___" + str(e) + '\n')
+            except:
+                print(" ___Line " + str(i * (len(product)) + 3 + 2 * i) + ": ERROR___" + '\n')
                 continue
         f.close()
 
