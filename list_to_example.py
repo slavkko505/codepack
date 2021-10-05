@@ -3,56 +3,20 @@ import class_Ll
 
 
 def start_metod():
+    s = class_Ll.Ll()
     while True:
         print(help_mes())
         try:
             n = int(input())
             if n == 2:
-                num = enter_number()
-                s = make_mas_by_yourself(num)
-                print_mas(s, "Масив введений вручну")
-                next_step(s)
+                print_mas(make_mas_by_yourself(s), "Масив введений вручну")
             elif n == 1:
                 num = enter_number()
-                s = make_mas_by_random(num)
-                print_mas(s, "Масив рандомного типу")
-                next_step(s)
+                print_mas(make_mas_by_random(s, num), "Масив рандомного типу")
             elif n == 3:
-                print("Завершення програми")
-                break
-            else:
-                continue
-        except ValueError:
-            print('\nВедіть число')
-
-
-def help_mes():
-    help_message = "*" * 30
-    help_message += "\n Команди:" + 9 * " " + \
-                    "\n 1 - Створити рандомний масив; \n 2 - Самостійно ввести масив; " + 5 * \
-                    " " + "\n 3 - Завершити програму.  \n"
-    help_message += "*" * 30 + "\n"
-    return help_message
-
-
-def help_mes_2():
-    print()
-    help_message = "*" * 45
-    help_message += "\nДодаткові команди:" + 9 * " " + \
-                    "\n 1 - Знайти суму усіх додатніх елементів; \n 2 - Додати елемент в k позицію; " + 5 * \
-                    " " + "\n 3 - Видалити елемент з k позиції;  \n 4 - Повернутися в головне меню \n"
-    help_message += "*" * 45 + "\n"
-    return help_message
-
-
-def next_step(s):
-    while True:
-        try:
-            print(help_mes_2())
-            n = int(input())
-            if n == 1:
                 sum_or_swap(s).display()
-            elif n == 2:
+                print_mas(s, "Змінений масив ")
+            elif n == 4:
                 while True:
                     try:
                         item = int(input("Введіть елемент який хочете додати \n"))
@@ -62,7 +26,7 @@ def next_step(s):
                         print('\nВведіть число')
                 add_elem(s, item, pos)
                 print_mas(s, "Змінений масив ")
-            elif n == 3:
+            elif n == 5:
                 while True:
                     try:
                         pos = int(input("Введіть позицію з якої хочете видалити елемент \n"))
@@ -71,12 +35,25 @@ def next_step(s):
                         print('\nВведіть число')
                 del_elem(s, pos)
                 print_mas(s, "Змінений масив ")
-            elif n == 4:
+            elif n == 6:
+                print("Завершення програми")
                 break
             else:
                 continue
         except ValueError:
-            print('\nВведіть число')
+            print('\nВедіть число')
+
+
+def help_mes():
+    help_message = "*" * 45
+    help_message += "\n Команди:" + 9 * " " + \
+                    "\n \t1 - Створити рандомний масив; \n \t2 - Самостійно ввести масив; " + 5 * \
+                    " " + "\n \t3 - Знайти суму усіх додатніх елементів;  \n"
+    help_message += " \t4 - Додати елемент в k позицію; " + 5 * \
+                    " " + "\n \t5 - Видалити елемент з k позиції; \n" \
+                          " \t6 - Завершити програму. \n"
+    help_message += "*" * 45 + "\n"
+    return help_message
 
 
 def add_elem(a, item, pos):
@@ -87,22 +64,20 @@ def del_elem(a, pos):
     a.delete(pos)
 
 
-def make_mas_by_yourself(s):
-    my_list = class_Ll.Ll()
-    print("Вводимо масив через Enter \n")
-    for i in range(s):
-        while True:
-            try:
-                n = int(input())
-                my_list.append(class_Ll.Node(n))
-                break
-            except ValueError:
-                print('\nВведіть число')
+def make_mas_by_yourself(my_list):
+    print("Вводимо через пробіл")
+    while True:
+        try:
+            n = list(map(int, input().split()))
+            for i in range(len(n)):
+                my_list.append(class_Ll.Node(n[i]))
+            break
+        except ValueError:
+            print('\nВведіть число')
     return my_list
 
 
-def make_mas_by_random(s):
-    my_list = class_Ll.Ll()
+def make_mas_by_random(my_list, s):
     while True:
         try:
             a = int(input("Введіть границю - а "))
@@ -166,3 +141,4 @@ def print_mas(a, s=''):
     print(s)
     a.display()
     print()
+
