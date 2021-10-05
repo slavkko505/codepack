@@ -7,7 +7,7 @@ class Validation:
     @staticmethod
     def validateStr(value):
         if any(map(str.isdigit, value)):
-            print("Title must not contain integers.")
+            print("Words must not contain integers.")
             raise ValueError
         return value
 
@@ -19,7 +19,7 @@ class Validation:
                 print("Price must have two digits after coma.")
                 raise ValueError
         except ValueError:
-            print("Price must be float of int and must have two digits after coma!")
+            print("Price must be float of int and must have two digits after coma -> '.'  !")
             raise ValueError
         return v
 
@@ -27,6 +27,7 @@ class Validation:
     def validateDate(date):
         datetime.strptime(date, '%Y-%m-%d')
         if int(date[0:4]) > 2022:
+            print("Data time error")
             raise ValueError
         else:
             return date
@@ -63,22 +64,20 @@ class Validation:
             raise ValueError
 
     @staticmethod
-    def validateMaterial(title):
+    def validateMatOrType(title, mas):
         if Validation.validateStr(title):
-            if title == 'gold' or title == 'silver' or title == 'platinum':
-                return title
-            else:
-                print("Material must be 'gold', 'silver' or 'platinum'")
+            for i in mas:
+                if title == i:
+                    return title
+            if mas[0] == 'gold':
+                print("Error material ")
                 raise ValueError
-
-    @staticmethod
-    def validateType(title):
-        if Validation.validateStr(title):
-            if title == 'rings' or title == 'earrings' or title == 'bracelets':
-                return title
             else:
-                print("Type must be 'rings', 'earrings' or 'bracelets'")
-                raise  ValueError
+                print("Error type ")
+                raise ValueError
+        else:
+            print("Error material or type")
+            raise ValueError
 
     @staticmethod
     def validateFileName(filename, end=".txt"):
@@ -102,6 +101,19 @@ class Validation:
                 func(m)
                 break
             except ValueError:
-                print("\n___wrong input___\n")
                 t = True
+                print("Try one more time!")
                 continue
+            except AttributeError:
+                t = True
+                print("Try one more time!")
+                continue
+            except NameError:
+                t = True
+                print("Try one more time!")
+                continue
+            except FileNotFoundError:
+                t = True
+                print("Try one more time!")
+                continue
+
