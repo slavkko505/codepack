@@ -1,0 +1,29 @@
+[
+  {
+    "title":"rings",
+    "code": "40640600",
+    "material": "gold",
+    "type": "rings",
+    "date_of_creation":"2002-12-06",
+    "price": "201",
+    "u_id": "12312415"
+  },
+  {
+    "title":"circle",
+    "code": "40640622",
+    "material": "silver",
+    "type": "bracelets",
+    "date_of_creation":"1960-12-06",
+    "price": "220.1",
+    "u_id": "1123"
+  },
+  {
+    "title":"title",
+    "code": "40640601",
+    "material": "platinum",
+    "type": "earrings",
+    "date_of_creation":"2010-05-26",
+    "price": "100",
+    "u_id": "567"
+  }
+  ]
