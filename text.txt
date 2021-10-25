@@ -1,0 +1,1 @@
+{'title': 'isue', 'code': '502', 'material': 'gold', 'type': 'rings', 'date_of_creation': '2020-06-06', 'price': '123', 'u_id': '21455'}
