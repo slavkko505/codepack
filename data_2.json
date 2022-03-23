@@ -1,0 +1,38 @@
+[
+  {
+    "title":"rings",
+    "code": "40640600",
+    "material": "gold",
+    "type": "ring",
+    "date_of_creation":"2002-02-19",
+    "price": "201.1",
+    "u_id": "12312415"
+  },
+  {
+    "title":"circle",
+    "code": "40640600",
+    "material": "free",
+    "type": "bracelets",
+    "date_of_creation":"1960-12-06",
+    "price": "220.1",
+    "u_id": "1123"
+  },
+  {
+    "title":"circle",
+    "code": "40640600",
+    "material": "silver",
+    "type": "bracelets",
+    "date_of_creation":"2010-03-26",
+    "price": "220.1",
+    "u_id": "1123"
+  },
+  {
+    "title":"circle",
+    "code": "40640600",
+    "material": "silver",
+    "type": "bracelets",
+    "date_of_creation":"2002-02-06",
+    "price": "free",
+    "u_id": "1123"
+  }
+  ]
